@@ -1,7 +1,5 @@
 <div id="<%= dom_id article %>">
-  <p>
-    <strong>Name:</strong>
-    <%= article.name %>
+  <p class="text-lg leading-loose">
+    <%= link_to article.name, article_path(article), class: "text-orange-600 underline hover:text-orange-700" %>
   </p>
-
 </div>
