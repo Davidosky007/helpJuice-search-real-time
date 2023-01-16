@@ -1,18 +1,18 @@
 databases:
-  - name: search_real_time
+  - name: david
     databaseName: search_real_time_production
     user: search_real_time
 
 services:
   - type: web
-    name: mysite
+    name: rails
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: search_real_time
-          property: connectionString
       - key: RAILS_MASTER_KEY
+        fromDatabase:
+          name: david
+          property: connectionString
+      - key: DATABASE_URL
         sync: false
