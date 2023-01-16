@@ -1,0 +1,23 @@
+<section class="">
+  <header class="l-section__header">
+    <h1 class="l-section__title">
+      <%= pluralize(@user_searches.length, 'Search') %>
+    </h1>
+  </header>
+
+  <div class="">
+    <ul class="c-vertical-list">
+      <% if @user_searches.empty? %>
+        <p class="l-section__empty">
+          &mdash;&nbsp; No searches &nbsp;&mdash;
+        </p>
+      <% else %>
+        <% @user_searches.entries.each do |title, count| %>
+          <li>
+            <%= render "search", search: {title: title, count: count} %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>

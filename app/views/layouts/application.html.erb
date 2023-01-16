@@ -12,6 +12,10 @@
 
   <body>
   <div class="container mx-auto my-16 lg:px-10 px-4">
+  <%= link_to "Back To Articles", root_path, class: "px-4 py-3 font-medium
+  inline-block p-6 bg-gradient-to-bl from-green-400 to-blue-400 rounded flex items-center cursor-pointer hover:bg-orange-400 focus:ring-4 ring-0 focus:ring-orange-100" %>
+  <%= link_to "Check Analytics Here", searches_path, class: "px-4 py-3 font-medium
+  inline-block p-6 bg-gradient-to-bl from-green-400 to-blue-400 rounded flex items-center cursor-pointer hover:bg-orange-400 focus:ring-4 ring-0 focus:ring-orange-100" %>
     <%= yield %>
   </div>
   </body>

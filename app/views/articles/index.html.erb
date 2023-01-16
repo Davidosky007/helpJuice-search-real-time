@@ -6,7 +6,11 @@
 
   <%= form.label :query, "Search by article name:", class: "block mb-2" %>
   <div class="flex space-x-3">
-    <%= form.text_field :query, class: "py-3 px-4 rounded border ring-0 focus:ring-4 focus:ring-orange-100 focus:shadow-none focus:border-orange-500 focus:outline-none",  data: {action: "input->search-form#search"} %>
+    <%= form.text_field :query, class: "py-3 px-4 rounded border ring-0 focus:ring-4 focus:ring-orange-100 focus:shadow-none focus:border-orange-500 focus:outline-none", id: "query",  data: {action: "input->search-form#search"} %>
+     <%= form.hidden_field :confirmed, 
+        id: "confirmed-input", 
+        value: nil 
+      %>
 
     <%= form.submit 'Search', class: "px-4 py-3 font-medium
   bg-orange-300 text-neutal-900 rounded flex items-center cursor-pointer hover:bg-orange-400 focus:ring-4 ring-0 focus:ring-orange-100" %>
@@ -17,4 +21,3 @@
 <%= render "articles", articles: @articles %>
 </div>
 <br>
-<%= link_to "New Article", new_article_path, class: "px-4 py-3 font-medium bg-orange-300 text-neutal-900 rounded inline-flex items-center cursor-pointer hover:bg-orange-400 focus:ring-4 ring-0 focus:ring-orange-100" %>
