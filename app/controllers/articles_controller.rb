@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def index
     query = params[:query]
@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  def create_search(query, user_id)
+  def create_search(query, _user_id)
     return unless query.present? && query.length >= 3
 
     last_unconfirmed_search = Search.where(user_id: current_user.id, confirmed: false).last

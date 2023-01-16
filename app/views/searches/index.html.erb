@@ -1,14 +1,14 @@
-<section class="">
-  <header class="l-section__header">
-    <h1 class="l-section__title">
+<section>
+  <header>
+    <h1>
       <%= pluralize(@user_searches.length, 'Search') %>
     </h1>
   </header>
 
-  <div class="">
-    <ul class="c-vertical-list">
+  <div >
+    <ul>
       <% if @user_searches.empty? %>
-        <p class="l-section__empty">
+        <p>
           &mdash;&nbsp; No searches &nbsp;&mdash;
         </p>
       <% else %>
